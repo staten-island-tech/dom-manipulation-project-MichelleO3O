@@ -8,18 +8,33 @@
 </head>
 <body>
   <h1>DOM Manipulation</h1>   
-  <form action="/action_page.php"></form>
-  <div class="formBox"><label for="Album Name">Album Name:</label><br>
-    <input type="text" id="albumName" name="Album Name"><br>
+  <section class="form-parent">
+    <form id="form" action="/action_page.php">
+      <div class="form-inputs">
+
+    <div class="form-input">
+      <label for="title">Album Name:</label><br>
+      <input type="text" id="title" class="text-box" required><br>
+  </div>
+
+    <div class="form-input">
+      <label for="artist">Artist:</label><br>
+      <input type="text" id="artist" class="text-box" required><br>
+  </div>
+
+    <div class="form-input">
+      <label for="url">Enter Image URL Here:</label><br>
+      <input type="text" id="url" class="text-box" required><br>
+  </div>
+
+  <div class="hero-form-input">
+    <input type="submit" value="Submit" class="btn">
+  </div>
+
 </div>
-  <div class="formBox"><label for="Artist">Artist:</label><br>
-    <input type="text" id="Artist" name="Artist"><br>
-</div>
-  <div class="formBox"><label for="Album Cover">Album Cover:</label><br>
-    <input type="text" id="Album Cover" name="Album Cover"><br><br>
-</div>
-  </form> 
-<button id="btn">Submit</button>
+    </form> 
+  </section>
+  
 
  <script src="index.js"></script>
  
