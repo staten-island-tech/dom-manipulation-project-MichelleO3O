@@ -2,8 +2,11 @@ const DOMSelectors = {
   title: document.getElementById("title"),
   artist: document.getElementById("artist"),
   url: document.getElementById("url"),
-  button: document.getElementById("btn"),
+  button: document.querySelector("btn"),
   display: document.getElementById("display"),
 };
 
-DOMSelectors.button.addEventListener();
+DOMSelectors.submit.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log(e);
+});
