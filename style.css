@@ -1,5 +1,5 @@
 .box {
-  background-color: aquamarine;
+  background-color: rgba(181, 201, 195);
   width: 25vw;
   padding: 15px;
   margin: 30px;
@@ -18,4 +18,38 @@
 .imgs {
   width: 20vw;
   border-radius: 10px;
+  margin: 10px;
+}
+
+.text-box {
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.btn {
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.form-input {
+  text-align: center;
+}
+
+.labels {
+  font-size: 30px;
+}
+
+.text-box {
+  padding: 10px;
+}
+
+body {
+  background-color: rgba(202, 177, 189);
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
 }
