@@ -1,3 +1,21 @@
-.formBox {
-  padding: 20px;
+.box {
+  background-color: aquamarine;
+  width: 25vw;
+  padding: 15px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+#album-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgs {
+  width: 20vw;
+  border-radius: 10px;
 }
