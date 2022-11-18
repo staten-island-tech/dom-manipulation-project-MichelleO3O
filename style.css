@@ -1,3 +1,7 @@
+* {
+  font-family: "Signika Negative", sans-serif;
+}
+
 .box {
   background-color: rgba(181, 201, 195);
   width: 25vw;
@@ -30,7 +34,11 @@
   border-radius: 5px;
   margin-top: 5px;
   font-size: 30px;
-  text-align: center;
+}
+
+.hero-form-input {
+  display: flex;
+  justify-content: center;
 }
 
 .form-input {
@@ -43,6 +51,10 @@
 
 .text-box {
   padding: 10px;
+}
+
+.remove {
+  border-radius: 5px;
 }
 
 body {
