@@ -7,7 +7,9 @@ const DOMSelectors = {
 };
 
 function removeBox(e) {
-  e.parentElement.remove();
+  // e.parentElement.remove();
+  console.log(e.target);
+  e.remove();
 }
 
 const removeButton = document.querySelectorAll(`.button`);
@@ -32,6 +34,10 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   </div>
   `
   );
+  const cards = document.querySelectorAll(".box");
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", removeBox(e));
+  }
   DOMSelectors.name.value = "";
   DOMSelectors.artist.value = "";
   DOMSelectors.url.value = "";
