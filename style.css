@@ -53,8 +53,16 @@
   padding: 10px;
 }
 
-.remove {
+.button {
   border-radius: 5px;
+}
+
+.header {
+  font-size: 45px;
+}
+
+.artist {
+  font-size: 35px;
 }
 
 body {

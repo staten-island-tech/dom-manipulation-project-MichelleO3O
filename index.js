@@ -7,9 +7,13 @@ const DOMSelectors = {
 };
 
 function removeBox(e) {
-  e.preventDefault();
-  e.target.parentNode.remove();
+  e.parentElement.remove();
 }
+
+const removeButton = document.querySelectorAll(`.button`);
+removeButton.forEach((button) => {
+  button.remove();
+});
 
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -21,10 +25,10 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
     "beforeend",
     `
   <div class = "box">
-    <p> ${name} </p>
-    <p> ${artist} </p>
+    <p class = header> ${name} </p>
+    <p class = artist> ${artist} </p>
     <img class = "imgs" src = ${url}>
-    <button type = "button" class = "remove" onclick = "removeBox(event)">Remove</button>
+    <button type = "button" class = "button">Remove</button>
   </div>
   `
   );
@@ -34,3 +38,4 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
 });
 
 // make sure to create seperate functions!!//
+//use queryselectorALL and NOT onclick//
