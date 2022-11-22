@@ -56,7 +56,9 @@
 .button {
   border-radius: 5px;
 }
-
+.button:hover {
+  cursor: pointer;
+}
 .header {
   font-size: 45px;
 }

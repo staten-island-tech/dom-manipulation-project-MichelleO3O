@@ -9,13 +9,8 @@ const DOMSelectors = {
 function removeBox(e) {
   // e.parentElement.remove();
   console.log(e.target);
-  e.remove();
+  e.target.remove();
 }
-
-const removeButton = document.querySelectorAll(`.button`);
-removeButton.forEach((button) => {
-  button.remove();
-});
 
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -34,10 +29,13 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
   </div>
   `
   );
-  const cards = document.querySelectorAll(".box");
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", removeBox(e));
-  }
+
+  const removeButton = document.querySelectorAll(`.button`);
+  removeButton.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.target.parentElement.remove();
+    });
+  });
   DOMSelectors.name.value = "";
   DOMSelectors.artist.value = "";
   DOMSelectors.url.value = "";
