@@ -36,6 +36,7 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
       e.target.parentElement.remove();
     });
   });
+
   DOMSelectors.name.value = "";
   DOMSelectors.artist.value = "";
   DOMSelectors.url.value = "";
