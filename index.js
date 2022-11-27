@@ -12,23 +12,37 @@ function removeBox(e) {
   e.target.remove();
 }
 
+function clear() {
+  DOMSelectors.name.value = "";
+  DOMSelectors.artist.value = "";
+  DOMSelectors.url.value = "";
+}
+
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
   console.log(e);
-  let name = DOMSelectors.name.value;
-  let artist = DOMSelectors.artist.value;
-  let url = DOMSelectors.url.value;
-  DOMSelectors.albums.insertAdjacentHTML(
-    "beforeend",
-    `
-  <div class = "box">
-    <p class = header> ${name} </p>
-    <p class = artist> ${artist} </p>
-    <img class = "imgs" src = ${url}>
-    <button type = "button" class = "button">Remove</button>
-  </div>
-  `
-  );
+
+  function createCard() {
+    let name = DOMSelectors.name.value;
+    let artist = DOMSelectors.artist.value;
+    let url = DOMSelectors.url.value;
+
+    function insertCard() {
+      DOMSelectors.albums.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class = "box">
+        <p class = header> ${name} </p>
+        <p class = artist> ${artist} </p>
+        <img class = "imgs" src = ${url}>
+        <button type = "button" class = "button">Remove</button>
+       </div>
+       `
+      );
+    }
+    insertCard();
+  }
+  createCard();
 
   const removeButton = document.querySelectorAll(`.button`);
   removeButton.forEach((button) => {
@@ -37,9 +51,7 @@ DOMSelectors.submit.addEventListener("submit", function (e) {
     });
   });
 
-  DOMSelectors.name.value = "";
-  DOMSelectors.artist.value = "";
-  DOMSelectors.url.value = "";
+  clear();
 });
 
 // make sure to create seperate functions!!//
