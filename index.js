@@ -17,40 +17,37 @@ function clear() {
   DOMSelectors.artist.value = "";
   DOMSelectors.url.value = "";
 }
+function createCard() {
+  let name = DOMSelectors.name.value;
+  let artist = DOMSelectors.artist.value;
+  let url = DOMSelectors.url.value;
+
+  insertCard(name, artist, url);
+}
+
+function insertCard(name, artist, url) {
+  DOMSelectors.albums.insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class = "box">
+    <p class = header> ${name} </p>
+    <p class = artist> ${artist} </p>
+    <img class = "imgs" src = ${url}>
+    <button type = "button" class = "button">Remove</button>
+   </div>
+   `
+  );
+}
 
 DOMSelectors.submit.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log(e);
-
-  function createCard() {
-    let name = DOMSelectors.name.value;
-    let artist = DOMSelectors.artist.value;
-    let url = DOMSelectors.url.value;
-
-    function insertCard() {
-      DOMSelectors.albums.insertAdjacentHTML(
-        "beforeend",
-        `
-        <div class = "box">
-        <p class = header> ${name} </p>
-        <p class = artist> ${artist} </p>
-        <img class = "imgs" src = ${url}>
-        <button type = "button" class = "button">Remove</button>
-       </div>
-       `
-      );
-    }
-    insertCard();
-  }
   createCard();
-
   const removeButton = document.querySelectorAll(`.button`);
   removeButton.forEach((button) => {
     button.addEventListener("click", function (e) {
       e.target.parentElement.remove();
     });
   });
-
   clear();
 });
 
